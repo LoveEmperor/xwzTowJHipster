@@ -1,0 +1,12 @@
+entity App {
+  name String
+  
+}
+entity Services{
+  name String 
+}
+
+relationship OneToOne {
+	App{user} to Services
+}
+

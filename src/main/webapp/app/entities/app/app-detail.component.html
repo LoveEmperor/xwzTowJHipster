@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="app">
+            <h2><span jhiTranslate="jhipster3App.app.detail.title">App</span> {{app.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipster3App.app.name">Name</span></dt>
+                <dd>
+                    <span>{{app.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipster3App.app.user">User</span></dt>
+                <dd>
+                    <div *ngIf="app.user">
+                        <a [routerLink]="['/services', app.user?.id, 'view']">{{app.user?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/app', app.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
